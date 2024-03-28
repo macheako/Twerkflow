@@ -1,0 +1,11 @@
+name: Build Library
+run-name: ${{ github.actor }} is building the library 🚀
+on:
+  push:
+    branches:
+      - '4.*'
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."      
