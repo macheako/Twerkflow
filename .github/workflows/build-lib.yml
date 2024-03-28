@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - '4.*'
+    tags:
+      - 'tag_*'
+      
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
