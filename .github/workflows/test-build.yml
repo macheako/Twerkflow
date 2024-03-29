@@ -17,11 +17,11 @@ jobs:
         run: |
           echo ("BUILD_VER=" + $Env:GITHUB_REF_NAME.replace('build_', '')) >> $Env:GITHUB_ENV
 
-#      - name: Checkout Version
-#        uses: actions/checkout@v4
-#        with:
-#          ref: ${{ env.build_version }}
-
       - name: Show Me
         run: |
           echo "$Env:BUILD_VER"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BUILD_VER }}
