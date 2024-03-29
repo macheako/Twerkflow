@@ -2,7 +2,7 @@ name: Test Build Workflow
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
-    tag:
+    tags:
       - build_*
 
 jobs:
