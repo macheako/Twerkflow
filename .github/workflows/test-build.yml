@@ -11,17 +11,17 @@ env:
 
 jobs:
   Build-Static-Libs:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Set Build Version
         run: |
-          echo "build_version=${GITHUB_REF_NAME##build_}" >> "$GITHUB_ENV"
+          echo ("BUILD_VER=" + $Env:GITHUB_REF_NAME.replace('build_', '')) >> $Env:GITHUB_ENV
 
-      - name: Checkout Version
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ env.build_version }}
+#      - name: Checkout Version
+#        uses: actions/checkout@v4
+#        with:
+#          ref: ${{ env.build_version }}
 
       - name: Show Me
         run: |
-          git tag --list
+          echo "$Env:BUILD_VER"
