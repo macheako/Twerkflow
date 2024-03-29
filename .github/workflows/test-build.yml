@@ -1,5 +1,6 @@
 name: Test Build Workflow
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: Test Build Workflow ${{ github.actor }} 🚀
+
 on:
   push:
     branches:
@@ -17,7 +18,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "tag_version=${GITHUB_REF_NAME}" >> "$GITHUB_ENV"
+          echo "tag_version=${GITHUB_REF_NAME##build_}" >> "$GITHUB_ENV"
 
       - name: Use the value
         id: step_two
